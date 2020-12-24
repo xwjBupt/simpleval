@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument('--checkpoint', default='/nas/xcode/vedadet/tinaface_epoch_185_weights.pth',
                         help='checkpoint file')
     parser.add_argument('--img_path',
-                        default='/nas/xcode/vedadet/data/WIDERFace/WIDER_val/0--Parade/0_Parade_marchingband_1_649.jpg',
+                        default='/nas/xcode/vedadet/data/WIDERFace/WIDER_val/0--Parade/0_Parade_marchingband_1_349.jpg',
                         help='to test on the image')
     parser.add_argument('--show_thresh', default=0.3,
                         help='the confidence to show a box')
