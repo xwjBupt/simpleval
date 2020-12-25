@@ -4,7 +4,7 @@ import inspect
 import numpy as np
 from numpy import random
 
-import vedacore.image as image
+import image as image
 from util.lib import is_list_of
 from util import registry
 from Model import bbox_overlaps

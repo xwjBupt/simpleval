@@ -12,14 +12,14 @@ from Model.parallel.data_parallel import MMDataParallel
 
 def parse_args():
     parser = argparse.ArgumentParser(description='val on a image')
-    parser.add_argument('--config', default='/nas/xcode/vedadet/configs/trainval/tinaface/tinaface.py',
+    parser.add_argument('--config', default='tinaface.py',
                         help='train config file path')
-    parser.add_argument('--checkpoint', default='/nas/xcode/vedadet/tinaface_epoch_185_weights.pth',
+    parser.add_argument('--checkpoint', default='epoch_184_weights.pth',
                         help='checkpoint file')
     parser.add_argument('--img_path',
-                        default='/nas/xcode/vedadet/data/WIDERFace/WIDER_val/0--Parade/0_Parade_marchingband_1_349.jpg',
+                        default='/dfsdata2/xuwj16_data/vedadet/data/WIDERFace/WIDER_val/50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_432.jpg',
                         help='to test on the image')
-    parser.add_argument('--show_thresh', default=0.3,
+    parser.add_argument('--show_thresh', default=0.5,
                         help='the confidence to show a box')
 
     args = parser.parse_args()
@@ -78,7 +78,7 @@ if __name__ == '__main__':
         if score >= args.show_thresh:
             cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 255),
                           1)  # 画图参数分别是(图像，（x起始坐标,y起始坐标），（x终点坐标,y终点坐标），（R，G，B）框框的颜色，width框框的粗细)
-    cv2.imwrite('show.png', image)
+    cv2.imwrite('show1.png', image)
     # cv2.imshow('test', image)  # 显示该图像
     # cv2.waitKey(0)  # 每张图片的显示时间，必须要有，不然就会出现图片现实太快，像没显示一样
     print('Done eval on %s' % args.img_path)
